@@ -10,24 +10,19 @@ const initialState = {
   // isLoggedIn: false,
   // isRefreshing: false,
 };
-const handlePending = state => {
-  state.isLoading = true;
+const handleFullfilled = (state, action) => {
+  state.user = action.payload.user;
+  state.token = action.payload.token;
+  state.isLoggedIn = true;
 };
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   extraReducers: {
-    [signUpUser.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      state.isLoggedIn = true;
-    },
-    [logInUser.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      state.isLoggedIn = true;
-    },
+    [signUpUser.fulfilled]: handleFullfilled,
+
+    [logInUser.fulfilled]: handleFullfilled,
     [logOutUser.fulfilled](state) {
       state.user = { name: '', email: '' };
       state.token = null;
