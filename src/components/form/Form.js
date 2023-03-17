@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import css from './Form.module.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { Button } from 'components';
 import { getContactsData } from 'redux/contacts/slice';
 import { addContact } from 'redux/contacts/operations';
 import { nanoid } from 'nanoid';
@@ -78,9 +79,14 @@ export const Form = () => {
         />
       </label>
       {error && 'Oops something went wrong'}
-      <button type="submit" disabled={isLoading} className={css.Form__Btn}>
+      <Button
+        type="submit"
+        disabled={isLoading}
+        className={css.Form__Btn}
+        colorType="color-blue"
+      >
         Add Contact
-      </button>
+      </Button>
     </form>
   );
 };

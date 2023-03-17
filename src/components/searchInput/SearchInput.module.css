@@ -13,7 +13,7 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .Search__input:focus {
-  outline: 1px solid rgb(173, 204, 204);
+  outline: 1px solid var(--color-blue);
 }
 @media screen and (min-width: 1200px) {
   .Search__input {

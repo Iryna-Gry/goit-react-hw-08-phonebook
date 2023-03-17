@@ -5,7 +5,7 @@ export const Container = styled.div`
   font-family: Sofia Sans, sans-serif;
   padding-right: 20px;
   display: flex;
-  margin: 30px auto;
+  margin: 0px auto;
 
   @media screen and (max-width: 767px) {
     max-width: 450px;

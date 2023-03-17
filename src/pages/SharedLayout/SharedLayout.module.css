@@ -1,0 +1,17 @@
+.Header {
+  padding: 10px 0;
+  background-color: var(--color-blue);
+}
+
+.Header__menu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+.Button__list {
+  display: flex;
+  gap: 20px;
+}

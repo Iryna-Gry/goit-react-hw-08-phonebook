@@ -1,0 +1,17 @@
+.Logo_svg {
+  color: #ffffff;
+  fill: currentColor;
+  margin-top: 7px;
+  margin-bottom: -7px;
+}
+.Logo_text {
+  text-decoration: none;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+.Logo_span {
+  margin-top: 3px;
+  margin-bottom: -3px;
+}
