@@ -39,8 +39,7 @@ export const Form = () => {
         addContact({
           id: nanoid(),
           name,
-          phone: number,
-          createdAt: Date.now(),
+          number,
         })
       );
     }

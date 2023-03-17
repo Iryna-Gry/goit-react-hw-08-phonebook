@@ -27,16 +27,16 @@ export const ContactList = () => {
       {contacts.length > 0 && !isLoading && !error && (
         <>
           <ul className={css.Contact__list}>
-            {filteredContacts.map(({ name, phone, id }) => {
+            {filteredContacts.map(({ name, number, id }) => {
               return (
                 <li
                   key={id}
                   name={name}
-                  number={phone}
+                  number={number}
                   className={css.Contact__item}
                 >
                   <p>{name}</p>
-                  <p>{phone}</p>
+                  <p>{number}</p>
                   <button
                     type="button"
                     className={css.Btn}
