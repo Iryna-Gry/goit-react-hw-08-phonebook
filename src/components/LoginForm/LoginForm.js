@@ -2,14 +2,17 @@ import { Button, CustomCheckbox } from 'components';
 import React, { useState } from 'react';
 import css from './LoginForm.module.css';
 import { AiOutlineEye } from 'react-icons/ai';
+import { RiEyeCloseLine } from 'react-icons/ri';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logInUser } from 'redux/user/operations';
-//import checkSvg from '../../img/sprite.svg'
 
 export const LoginForm = () => {
   const [isChecked, setIsChecked] = useState(false);
   const dispatch = useDispatch();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => setShowPassword(!showPassword);
 
   const handleCheck = () => setIsChecked(!isChecked);
 
@@ -40,14 +43,25 @@ export const LoginForm = () => {
         </div>
         <div className={css.User_Box}>
           <input
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             name="userPassword"
             required
             id="user-password"
             className={css.Input}
             placeholder="Enter your password here"
           />
-          <AiOutlineEye className={css.Password_icon} size={30} />
+
+          <button
+            type="button"
+            onClick={handleTogglePassword}
+            className={css.Password_icon}
+          >
+            {showPassword ? (
+              <RiEyeCloseLine size={30} />
+            ) : (
+              <AiOutlineEye size={30} />
+            )}
+          </button>
           <div className={css.Form_Error}></div>
         </div>
 

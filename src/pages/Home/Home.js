@@ -3,7 +3,7 @@ import { Container } from 'components';
 import css from './Home.module.css';
 import phonebookImg from 'img/phonebook.png';
 
-export const Home = () => {
+const Home = () => {
   return (
     <Container
       style={{
@@ -26,3 +26,5 @@ export const Home = () => {
     </Container>
   );
 };
+
+export default Home;

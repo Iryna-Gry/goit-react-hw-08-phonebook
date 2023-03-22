@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Section, ContactList, Form, SearchInput } from 'components';
 
-export const Contacts = () => {
+const Contacts = () => {
   return (
     <Container>
       <Section title="Add contact" className="aside">
@@ -15,3 +15,5 @@ export const Contacts = () => {
     </Container>
   );
 };
+
+export default Contacts;

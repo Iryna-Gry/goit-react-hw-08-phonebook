@@ -13,3 +13,5 @@ export * from './Button/Button';
 export * from './Wraper/Wraper.styled';
 export * from './UserMenu/UserMenu';
 export * from './AuthNav/AuthNav';
+export * from './PrivateRoute';
+export * from './RestrictedRoute';

@@ -10,9 +10,6 @@ export const AuthNav = () => {
       <NavLink className={css.link} to="/login">
         Log In
       </NavLink>
-      <button className={css.Header_button} type="button">
-        EN
-      </button>
     </div>
   );
 };

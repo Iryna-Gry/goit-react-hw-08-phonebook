@@ -7,8 +7,8 @@ const initialState = {
     email: '',
   },
   token: null,
-  // isLoggedIn: false,
-  // isRefreshing: false,
+  isLoggedIn: false,
+  isRefreshing: false,
 };
 const handleFullfilled = (state, action) => {
   state.user = action.payload.user;
@@ -28,17 +28,17 @@ export const userSlice = createSlice({
       state.token = null;
       state.isLoggedIn = false;
     },
-    // [fetchUser.pending](state) {
-    //   state.isRefreshing = true;
-    // },
+    [fetchUser.pending](state) {
+      state.isRefreshing = true;
+    },
     [fetchUser.fulfilled](state, action) {
       state.user = action.payload;
       state.isLoggedIn = true;
-      // state.isRefreshing = false;
+      state.isRefreshing = false;
     },
-    // [refreshUser.rejected](state) {
-    //   state.isRefreshing = false;
-    // },
+    [fetchUser.rejected](state) {
+      state.isRefreshing = false;
+    },
   },
 });
 
@@ -46,3 +46,4 @@ export const userSlice = createSlice({
 export const selectIsLoggedIn = state => state.user.isLoggedIn;
 
 export const selectUser = state => state.user;
+export const selectIsRefreshing = state => state.user.isRefreshing;

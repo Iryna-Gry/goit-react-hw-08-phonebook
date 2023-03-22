@@ -1,6 +1,6 @@
 import { Container, Logo, Navigation, UserMenu, AuthNav } from 'components';
 import css from './SharedLayout.module.css';
-import React from 'react';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { selectIsLoggedIn } from 'redux/user/slice';
 import { useSelector } from 'react-redux';
@@ -18,7 +18,9 @@ export const SharedLayout = () => {
           </div>
         </Container>
       </header>
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

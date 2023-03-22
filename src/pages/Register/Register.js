@@ -1,7 +1,7 @@
 import { SignUpForm, Container } from 'components';
 import React from 'react';
 
-export const Register = () => {
+const Register = () => {
   return (
     <Container
       style={{
@@ -13,3 +13,4 @@ export const Register = () => {
     </Container>
   );
 };
+export default Register;
