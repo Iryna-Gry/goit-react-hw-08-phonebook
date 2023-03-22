@@ -3,11 +3,15 @@ import css from './SignUpForm.module.css';
 import { Button, CustomCheckbox } from 'components';
 import { useDispatch } from 'react-redux';
 import { AiOutlineEye } from 'react-icons/ai';
+import { RiEyeCloseLine } from 'react-icons/ri';
 import { signUpUser } from 'redux/user/operations';
 
 export const SignUpForm = () => {
   const [isChecked, setIsChecked] = useState(false);
   const dispatch = useDispatch();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => setShowPassword(!showPassword);
 
   const handleCheck = () => setIsChecked(!isChecked);
 
@@ -38,7 +42,7 @@ export const SignUpForm = () => {
             name="username"
             id="user-name"
             className={css.Input}
-            placeholder="First name"
+            placeholder="Login"
           />
 
           <div className={css.Form_Error}></div>
@@ -58,14 +62,25 @@ export const SignUpForm = () => {
 
         <div className={css.User_Box}>
           <input
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             name="userPassword"
+            required
             id="user-password"
-            placeholder="Password"
             className={css.Input}
+            placeholder="Password"
           />
-          <AiOutlineEye className={css.Password_icon} size={30} />
 
+          <button
+            type="button"
+            onClick={handleTogglePassword}
+            className={css.Password_icon}
+          >
+            {showPassword ? (
+              <RiEyeCloseLine size={30} />
+            ) : (
+              <AiOutlineEye size={30} />
+            )}
+          </button>
           <div className={css.Form_Error}></div>
         </div>
 

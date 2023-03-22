@@ -21,7 +21,7 @@ const Home = () => {
         </p>
       </div>
       <div className={css.Image_block}>
-        <img src={phonebookImg} alt="Phonebook" width={350} height={350} />
+        <img src={phonebookImg} alt="Phonebook" className={css.Hero_img} />
       </div>
     </Container>
   );

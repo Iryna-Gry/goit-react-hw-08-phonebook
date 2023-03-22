@@ -36,7 +36,7 @@ export const LoginForm = () => {
             name="userEmail"
             id="user-email"
             className={css.Input}
-            placeholder="Enter your email here"
+            placeholder="Email"
           />
 
           <div className={css.Form_Error}></div>
@@ -48,7 +48,7 @@ export const LoginForm = () => {
             required
             id="user-password"
             className={css.Input}
-            placeholder="Enter your password here"
+            placeholder="Password"
           />
 
           <button

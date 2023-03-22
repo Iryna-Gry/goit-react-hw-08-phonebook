@@ -11,7 +11,13 @@
   display: flex;
   align-items: center;
 }
+
 .Logo_span {
-  margin-top: 3px;
-  margin-bottom: -3px;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .Logo_span {
+    margin-top: 3px;
+    margin-bottom: -3px;
+  }
 }
