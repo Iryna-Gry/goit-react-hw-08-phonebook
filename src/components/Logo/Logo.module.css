@@ -17,6 +17,7 @@
 }
 @media screen and (min-width: 768px) {
   .Logo_span {
+    display: block;
     margin-top: 3px;
     margin-bottom: -3px;
   }
