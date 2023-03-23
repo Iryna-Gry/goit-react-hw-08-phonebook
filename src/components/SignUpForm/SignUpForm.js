@@ -18,7 +18,6 @@ export const SignUpForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    console.log(form);
     dispatch(
       signUpUser({
         name: form.elements.username.value,
@@ -97,7 +96,7 @@ export const SignUpForm = () => {
           </CustomCheckbox>
         </div>
 
-        <Button type="submit" colorType="button--blue">
+        <Button type="submit" colorType="button--blue" disabled={!isChecked}>
           Sign Up
         </Button>
       </form>
