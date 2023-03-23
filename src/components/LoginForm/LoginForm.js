@@ -1,4 +1,4 @@
-import { Button, CustomCheckbox } from 'components';
+import { Button } from 'components';
 import React, { useState } from 'react';
 import css from './LoginForm.module.css';
 import { AiOutlineEye } from 'react-icons/ai';
@@ -8,13 +8,10 @@ import { useDispatch } from 'react-redux';
 import { logInUser } from 'redux/user/operations';
 
 export const LoginForm = () => {
-  const [isChecked, setIsChecked] = useState(false);
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
 
   const handleTogglePassword = () => setShowPassword(!showPassword);
-
-  const handleCheck = () => setIsChecked(!isChecked);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -63,16 +60,6 @@ export const LoginForm = () => {
             )}
           </button>
           <div className={css.Form_Error}></div>
-        </div>
-
-        <div className={css.Checkbox_login}>
-          <CustomCheckbox
-            id="checkbox"
-            onChange={handleCheck}
-            isChecked={isChecked}
-          >
-            Remember me
-          </CustomCheckbox>
         </div>
 
         <Button type="submit" disabled={false}>
